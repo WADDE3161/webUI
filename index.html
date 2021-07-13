@@ -44,7 +44,7 @@
            <a class="btn" href="#">ON</a>
           </div>
      </div>
-     <div style="float: left;width: relative;margin: 10px;padding: 2px;box-shadow: 2px 2px 5px orange;border: 2px solid orange;border-radius: 50%;">
+     <div style="float: left;width: relative;margin: 10px;padding: 2px;box-shadow: 2px 2px 5px orange;border: 2px solid orange;border-radius: 30%;">
            <p style="text-align: center;">LIGHT: ON</p>
          <div style="float: left;width: relative;margin: 10px;padding: 2px;box-shadow: 5px 5px 5px plack;border: 2px solid orange;border-radius: 50%;">
            <a class="btn" href="#">ON</a>
@@ -57,11 +57,11 @@
            <a class="btn" href="#">OF</a>
      </div>
     
-    <div style="float: left;width: relative;margin: 10px;padding: 15px;box-shadow: 2px 2px 5px orange;border: 2px solid orange;border-radius: 15px;">
+    <div style="float: left;width: 100%;margin: 10px;padding: 15px;box-shadow: 2px 2px 5px orange;border: 2px solid orange;border-radius: 15px;">
       <p>FAN SPEED >>>>>>>>> : <span id="demo"></span>%</p>
       <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
     </div>
-    <div style="float: left;width: relative;margin: 10px;padding: 2px;box-shadow: 2px 2px 5px orange;border: 2px solid orange;border-radius: 15px;">
+    <div style="float: left;width: 100%;margin: 10px;padding: 10px;box-shadow: 2px 2px 5px orange;border: 2px solid orange;border-radius: 30%;">
       <p>FAN SPEED >>>>>>>>> : <span id="demo1"></span>%</p>
       <input type="range" min="1" max="100" value="1" class="slider" id="myRange1">
     </div>
@@ -69,12 +69,16 @@
 <script>
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-var slider = document.getElementById("myRange1");
-var output = document.getElementById("demo1");
+var slider1 = document.getElementById("myRange1");
+var output1 = document.getElementById("demo1");
 output.innerHTML = slider.value;
+output1.innerHTML = slider1.value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
+}
+slider1.oninput = function() {
+  output1.innerHTML = this.value;
 }
 </script>
 
