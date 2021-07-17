@@ -14,7 +14,9 @@
  .btn a {margin: 15px;padding: 10px;text-align: center;box-sizing: border-box;background-color: transparent;border: 2px solid #e74c3c;border-radius: 50%;color: green;cursor: pointer;display: flex;font-size: 1rem;font-weight: 400;line-height: 1;margin: 20px;padding: 40px 36px 40px 36px;text-decoration: none;text-align: center;font-weight: 700;border-color: #3498db;box-shadow: 0 0 7px 15px #3498db inset, 0 0 3px 0  #3498db;-webkit-transition: all 150ms ease-in-out;transition: all 150ms ease-in-out;}
  .btn a:hover {border-color:  #3498db;color: red;outline: 0;box-shadow: 0 0 3px 0  #3498db inset, 0 0 7px 15px  #3498db;}   
  .bslider {float: left;width: 335px;margin: 15px;padding: 6px;box-shadow: 2px 2px 5px orange;border: 2px solid orange;border-radius: 20px;}
- 
+ .slider { -webkit-appearance: none; margin: 14px; width: 360px; height: 25px; background: #FFD65C; outline: none; -webkit-transition: .2s; transition: opacity .2s;}
+ .slider::-webkit-slider-thumb {-webkit-appearance: none; appearance: none; width: 35px; height: 35px; background: #003249; cursor: pointer;}
+ .slider::-moz-range-thumb { width: 35px; height: 35px; background: #003249; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -49,12 +51,30 @@
      </div>
      
       <div class="bslider">
-           <p style="text-align: center;">SPEED >>>>>>>>>: ON</p>
-           <a href="#">ON</a>
+           <p style="text-align: center;">SPEED >>>>>>>>>:<span id="textSliderValue">%SLIDERVALUE%</span></p>
+           <p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="1023" value="%SLIDERVALUE%" step="1" class="slider"></p>
      </div>
      <div class="bslider">
-           <p style="text-align: center;">SPEED >>>>>>>>>: ON</p>
-           <a href="#">ON</a>
+           <p style="text-align: center;">SPEED >>>>>>>>>:</p>
+           
      </div>
+<script>
+
+function updateSliderPWM(element) {
+
+var sliderValue = document.getElementById("pwmSlider").value;
+
+document.getElementById("textSliderValue").innerHTML = sliderValue;
+
+console.log(sliderValue);
+
+var xhr = new XMLHttpRequest();
+
+xhr.open("GET", "/slider?value="+sliderValue, true);
+
+xhr.send();
+
+}</script>
+
 </body>
 </html>
