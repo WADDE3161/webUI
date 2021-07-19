@@ -23,8 +23,8 @@
 </style>
 </head>
 <body>
-      <h1 style="text-align: center; color: #3498db; text-shadow: 2px 2px 4px #000000;">SMART HOME SYSTEM</h1>
-      <h2 style="text-align: center;color: #3498db; text-shadow: 2px 2px 4px #000000;">SMART BOARD</h2>
+      <h1 style="text-align: center; color: #000066; text-shadow: 2px 2px 4px #000000;">SMART HOME SYSTEM</h1>
+      <h2 style="text-align: center;color: #ffffff; text-shadow: 2px 2px 4px #000000;">SMART BOARD</h2>
      <div class="btn">
            <p style="text-align: center;">LIGHT: ON</p>
            <div class="obtn">
@@ -53,13 +53,10 @@
     
      
       <div class="bslider">
-           <p style="text-align: center; color: #3498db; text-shadow: 2px 2px 4px #000000; ">SPEED >>>>>>>>>:<span id="textSliderValue">%SLIDERVALUE%</span></p>
+           <p style="text-align: center; color: #000066; text-shadow: 2px 2px 4px #000000; ">SPEED >>>>>>>>>:<span id="textSliderValue">%SLIDERVALUE%</span></p>
            <p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="1023" value="%SLIDERVALUE%" step="1" class="slider"></p>
      </div>
-     <div class="bslider">
-           <p style="text-align: center;">SPEED >>>>>>>>>:</p>
-           <input type="time" step="300">
-     </div>
+     
 <script>
 
 function updateSliderPWM(element) {
